@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana Homemade Layer Cake - Kelezatan di Setiap Lapis</title>
+    <meta name="description" content="Pesan kue lapis homemade premium dari Diana's. Dibuat dengan bahan-bahan terbaik dan penuh cinta untuk momen spesial Anda.">
+    <meta name="google-site-verification" content="tJOXZcHxov6l0iQIH_sL1uZuDH_Gte-zI1_QBPnAoF4" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        /* === GLOBAL STYLES === */
+        :root {
+            --primary-color: #F8C8DC; /* Soft Pink */
+            --secondary-color: #FFF8F0; /* Creamy White */
+            --accent-color: #D81B60; /* Strong Pink/Magenta */
+            --text-color: #4E342E; /* Dark Chocolate Brown */
+            --white-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        h1.brand-font, h2.brand-font {
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400;
+        }
+        
+        h2 { font-size: 2.5rem; text-align: center; }
+        h3 { font-size: 1.5rem; }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent-color);
+            color: var(--white-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b7114b;
+            transform: translateY(-3px);
+        }
+
+        /* === HEADER & NAVIGATION === */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 248, 240, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 5%;
+        }
+
+        .navbar .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1987&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            color: var(--white-color);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            font-weight: 400;
+        }
+
+        /* === ABOUT SECTION === */
+        #about {
+            background: var(--white-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-content img {
+            width: 40%;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .about-content .text {
+            width: 60%;
+        }
+        
+        .about-content h2 {
+            text-align: left;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        .about-content .text p {
+            margin-bottom: 15px;
+        }
+
+        /* === FLAVORS SECTION === */
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .flavor-card {
+            background: var(--white-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .flavor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .flavor-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .flavor-card-content {
+            padding: 25px;
+        }
+        
+        .flavor-card-content h3 {
+            color: var(--accent-color);
+        }
+
+        /* === HOW TO ORDER SECTION === */
+        #order {
+             background: var(--white-color);
+        }
+
+        .order-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .step .icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .step h3 {
+            color: var(--text-color);
+        }
+        
+        .order-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .order-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        /* === GALLERY SECTION === */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        
+        /* === TESTIMONIALS SECTION === */
+        #testimonials {
+             background-color: var(--white-color);
+        }
+        .testimonial-card {
+            max-width: 700px;
+            margin: 50px auto 0 auto;
+            background: var(--secondary-color);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            border-top: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card p.quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background-color: var(--text-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .social-media a {
+            color: var(--white-color);
+            font-size: 1.6rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: var(--primary-color);
+        }
+        
+        footer p {
+            margin-top: 20px;
+        }
+        
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            .navbar { flex-direction: column; gap: 10px; }
+            
+            .about-content { flex-direction: column; }
+            .about-content img, .about-content .text { width: 100%; }
+            .about-content h2 { text-align: center; }
+
+            .order-steps { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <a href="#" class="logo">Diana's Homemade</a>
+        <nav>
+            <ul>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#flavors">Varian Rasa</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#order">Cara Pesan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="brand-font">Kelezatan Setiap Lapis,</h1>
+                <p>Kue lapis homemade premium yang dibuat dengan bahan-bahan terbaik dan penuh cinta untuk momen spesial Anda.</p>
+                <a href="#order" class="btn">Pesan Sekarang</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="container">
+                <div class="about-content">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQJJZFdIgUMZZCU8mzrabYHzKDjtiFVxibg&s" alt="Diana's Layer Cake">
+                    <div class="text">
+                        <h2 class="brand-font">Dari Dapur Rumahan, Untuk Momen Istimewa Anda.</h2>
+                        <p><a href="http://dianahomemade.ics-csirt.io/" target="_blank"><strong>Diana Homemade Layer Cake</strong></a> berawal dari kecintaan pada seni membuat kue. Setiap kue yang kami ciptakan adalah hasil dari resep warisan keluarga, menggunakan bahan-bahan paling segar dan berkualitas tanpa bahan pengawet.</p>
+                        <p>Kami percaya bahwa kue bukan hanya hidangan penutup, tetapi juga bagian dari kenangan. Itulah mengapa kami mencurahkan segenap hati dalam setiap adonan, lapisan krim, dan hiasan, untuk memastikan momen Anda menjadi lebih manis dan tak terlupakan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLAVORS SECTION -->
+        <section id="flavors">
+            <div class="container">
+                <h2>Varian Rasa Terlaris</h2>
+                <div class="flavor-grid">
+                    <div class="flavor-card">
+                        <img src="https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-jumbo.jpg" alt="Kue Cokelat Klasik">
+                        <div class="flavor-card-content">
+                            <h3>Classic Chocolate Fudge</h3>
+                            <p>Kue cokelat lembut dengan lapisan ganache cokelat premium yang melimpah. Klasik, kaya rasa, dan selalu jadi favorit.</p>
+                        </div>
+                    </div>
+                    <div class="flavor-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfJqBKw6H767WhIYjqPdIe_YyNH2DUtXttQ&s" alt="Kue Red Velvet">
+                        <div class="flavor-card-content">
+                            <h3>Red Velvet Cream Cheese</h3>
+                            <p>Pesona kue red velvet yang mewah dengan lapisan frosting cream cheese yang gurih dan sedikit asam. Perpaduan yang sempurna.</p>
+                        </div>
+                    </div>
+                    <div class="flavor-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9I0hU4amTYGp8_HuwKCHyr1f7-Uqf6KWo6oyxe3VNQGGr1gWYv7SZegA_zlhj0ZJHKC4&usqp=CAU" alt="Kue Matcha">
+                        <div class="flavor-card-content">
+                            <h3>Matcha White Chocolate</h3>
+                            <p>Untuk para pecinta teh hijau. Aroma matcha otentik berpadu dengan manisnya white chocolate. Unik dan memanjakan lidah.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- GALLERY SECTION -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Maniskan Momen Spesialmu</h2>
+                 <div class="gallery-grid">
+                    <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?q=80&w=1887&auto=format&fit=crop" alt="Kue ulang tahun dengan lilin">
+                    <img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?q=80&w=1887&auto=format&fit=crop" alt="Potongan kue lapis di piring">
+                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1950&auto=format&fit=crop" alt="Kue dihias bunga untuk perayaan">
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW TO ORDER SECTION -->
+        <section id="order">
+            <div class="container">
+                <h2>Cara Pemesanan</h2>
+                <div class="order-steps">
+                    <div class="step">
+                        <div class="icon"><i class="fa-solid fa-cake-candles"></i></div>
+                        <h3>1. Pilih Varian Kue</h3>
+                        <p>Lihat varian rasa kami dan pilih kue yang paling Anda inginkan untuk acaramu.</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h3>2. Hubungi Kami</h3>
+                        <p>Kirim pesanan Anda melalui WhatsApp dengan format yang telah ditentukan.</p>
+                    </div>
+                    <div class="step">
+                        <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>3. Konfirmasi & Pengiriman</h3>
+                        <p>Kami akan konfirmasi pesanan Anda dan kue lezat akan segera diantar ke tempat Anda.</p>
+                    </div>
+                </div>
+                <div class="order-cta">
+                    <p>Siap untuk memesan atau ingin bertanya lebih lanjut?</p>
+                    <a href="#" target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>Apa Kata Pelanggan Kami</h2>
+                <div class="testimonial-card">
+                    <p class="quote">"Kue cokelatnya benar-benar lumer di mulut! Semua tamu di acara ulang tahun anak saya suka. Rasanya premium dan tidak terlalu manis. Recommended banget!"</p>
+                    <div class="author"> - Riana, Owner <a href="https://jagoankita.my.id">JagoanKita</a></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>© 2025 Diana Homemade Layer Cake. Dibuat dengan <a href="https://vpsekspor.com/">VpsEkspor</a> .</p>
+        </div>
+    </footer>
+ <div style="display: none;"> 
+<li><a href="http://commonspace.chipandjoannaexposed.com/" target="_blank">	http://lanacoffee.plasmic.site/</a></li>
+<li><a href="http://liminalcoffee.foxie.cool/" target="_blank">	http://liminalcoffee.foxie.cool/</a></li>
+<li><a  href="http://lanacoffee.plasmic.site/" target="_blank">	http://lanacoffee.plasmic.site/</a></li>
+</div>
+</body>
+</html>
